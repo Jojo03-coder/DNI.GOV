@@ -1,0 +1,801 @@
+<!-- ====== REST OF YOUR PAGE CONTENT STARTS HERE ====== -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage - US Intelligence Community</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdniintell4418back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<!-- ====== NEW HERO HEADER (Scoped) ====== -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>WE UNIFY OUR INTELLIGENCE COMMUNITY</h1>
+    <h2>TOWARD A STRONGER, SAFER NATION</h2>
+    <img src="images/1odni1.png" alt="ODNI Seal" class="hero-seal">
+  </div>
+
+  <!-- Mission Statement Card -->
+  <div class="hero-mission">
+    <h3>OFFICE <em>of the</em> DIRECTOR <em>of</em> NATIONAL INTELLIGENCE</h3>
+    <p>
+      Our mission is to <strong>lead intelligence integration</strong> and forge an 
+      <strong>intelligence community</strong> that delivers the most 
+      insightful intelligence possible.
+    </p>
+    <a href="intelligence_community_members.html" class="hero-btn">WHO WE ARE</a>
+  </div>
+</section>
+
+<style>
+  /* ====== SCOPED HERO STYLES ====== */
+  .hero-section {
+    background: url("images/flag\ building1.jpg") no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 80px;
+    position: relative;
+  }
+  .hero-content h1 {
+    color: white;
+    font-size: 2rem;
+   font-weight: bold;
+  }
+  .hero-content h2 {
+    color: white;
+    font-size: 1.4rem;
+    margin: 15px 0 40px;
+  }
+  .hero-seal {
+    margin: 20px auto;
+    max-width: 180px;
+    display: block;
+  }
+  .hero-mission {
+    background: white;
+    color: #333;
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 700px;
+    margin: -60px auto 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  .hero-mission h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .hero-mission p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #fbc02d;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  .hero-btn:hover {
+    background-color: #f9a825;
+  }
+ 
+    
+</style>
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Floating Contact Agent Button with Redirect</title>
+  <style>
+    :root{
+      --accent:#0b5cff;
+      --accent-contrast:#fff;
+      --bg-overlay:rgba(0,0,0,0.5);
+      --card-bg:#fff;
+      --muted:#6b7280;
+      --radius:14px;
+      --shadow:0 6px 20px rgba(2,6,23,0.25);
+      --button-size:64px;
+      --z:99999;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,'Segoe UI',Roboto;
+      background:#f7fafc;
+    }
+    .floating-agent{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:var(--z);
+      width:var(--button-size);
+      height:var(--button-size);
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),#2f7bff);
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow);
+      cursor:pointer;border:none;outline:none;
+    }
+    .floating-agent:hover{transform:translateY(-2px)}
+    .agent-icon{width:34px;height:34px;}
+    .agent-tooltip{
+      position:fixed;right:calc(20px + var(--button-size) + 12px);
+      bottom:calc(20px + (var(--button-size) - 36px)/2);
+      background:#111827;color:#fff;padding:8px 12px;border-radius:8px;
+      font-size:13px;box-shadow:var(--shadow);display:none;
+    }
+    .floating-agent:hover + .agent-tooltip{display:block}.overlay{
+  position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:calc(var(--z)+1);
+  background:var(--bg-overlay);padding:20px;
+}
+.overlay.open{display:flex}
+.dialog{width:100%;max-width:600px;background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;position:relative;}
+.close-btn{position:absolute;right:12px;top:12px;border:none;background:transparent;font-size:18px;cursor:pointer}
+.contact-grid{display:grid;gap:12px;}
+label{font-size:13px;color:#111827;margin-bottom:6px;display:block}
+input,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;}
+textarea{min-height:80px;}
+.actions{margin-top:12px;display:flex;gap:10px}
+.primary{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+.secondary{background:#f9fafb;border:1px solid #ddd;padding:10px 12px;border-radius:10px;cursor:pointer}
+
+  </style>
+</head>
+
+
+<body class="bg-background text-text-primary">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-strong relative z-50">
+        <!-- Top Security Bar -->
+        <div class="bg-accent text-white py-2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <span>THREAT LEVEL: ELEVATED</span>
+                        </div>
+                        <div class="hidden md:block">Last Updated: September 9, 2025 08:26 EST</div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="secure_professional_portal.html" class="hover:text-accent-200 transition-smooth">
+                            <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Secure Login
+                        </a>
+                        <span class="text-accent-200">|</span>
+                        <span>FOIA Requests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+              <!-- Logo and Title -->
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0">
+                  <!-- Fix logo SVG: use black color for logo -->
+                  <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="#222" stroke-width="3" fill="none"/>
+                    <path d="M30 35 L50 25 L70 35 L70 65 L50 75 L30 65 Z" fill="#222" opacity="0.8"/>
+                    <circle cx="50" cy="50" r="8" fill="#fff"/>
+                    <text x="50" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">DNI</text>
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="text-xl font-headline font-bold text-black">United States</h1>
+                  <p class="text-sm text-gray-700">National Intelligence Community</p>
+                </div>
+              </div>
+              <!-- Desktop Navigation -->
+              <div class="hidden lg:flex items-center space-x-8">
+                <a href="homepage_dni_intelligence_portal.html" class="text-black border-b-2 border-accent px-3 py-2 text-sm font-medium">Home</a>
+                <a href="director_s_office_leadership_hub.html" class="text-black hover:text-accent px-3 py-2 text-sm font-medium">Leadership</a>
+                <a href="intelligence_community_members.html" class="text-black hover:text-accent px-3 py-2 text-sm font-medium">Community</a>
+                <a href="news_communications_center.html" class="text-black hover:text-accent px-3 py-2 text-sm font-medium">News</a>
+                <a href="gallery_historical_archives.html" class="text-black hover:text-accent px-3 py-2 text-sm font-medium">Archives</a>
+                <a href="javascript:void(0)" class="text-black hover:text-accent px-3 py-2 text-sm font-medium">Careers</a>
+              </div>
+
+              <!-- Mobile menu button -->
+              <div class="lg:hidden">
+                <button type="button" class="text-black hover:text-accent-200 focus:outline-none focus:text-accent-200" onclick="toggleMobileMenu()">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation Menu -->
+          <div id="mobile-menu" class="lg:hidden hidden bg-primary-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+              <a href="homepage_dni_intelligence_portal.html" class="text-white block px-3 py-2 text-base font-medium border-l-4 border-accent">Home</a>
+              <a href="director_s_office_leadership_hub.html" class="text-primary-200 hover:text-white block px-3 py-2 text-base font-medium">Director's Office</a>
+              <a href="intelligence_community_members.html" class="text-primary-200 hover:text-white block px-3 py-2 text-base font-medium">Community Members</a>
+              <a href="news_communications_center.html" class="text-primary-200 hover:text-white block px-3 py-2 text-base font-medium">News & Communications</a>
+              <a href="gallery_historical_archives.html" class="text-primary-200 hover:text-white block px-3 py-2 text-base font-medium">Gallery & Archives</a>
+              <a href="secure_professional_portal.html" class="text-primary-200 hover:text-white block px-3 py-2 text-base font-medium">Professional Portal</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Director's Welcome -->
+    <section class="relative bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-800 text-white overflow-hidden" style="position:relative;">
+      <!-- Overlay for navy blue with opacity -->
+      <div style="position:absolute;inset:0;background:rgba(10,24,60,0.6);z-index:1;"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" style="position:relative;z-index:2;">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Director's Message -->
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <div class="inline-flex items-center px-4 py-2 bg-accent/20 rounded-full text-accent-200 text-sm font-medium">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Official Message from the Director
+              </div>
+              <h1 class="text-4xl lg:text-5xl font-headline font-bold leading-tight">
+                <span style="color:#FFD700;">Welcome to the</span>
+                <span style="color:#fff;"> US Intelligence Community</span>
+                <span style="color:#FFD700;"> Digital Headquarters</span>
+              </h1>
+              <p class="text-xl text-primary-100 leading-relaxed">
+                Under Director Tulsi Gabbard's leadership, we're modernizing America's intelligence operations while maintaining our commitment to national security, transparency, and professional excellence.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="director_s_office_leadership_hub.html" class="btn-accent inline-flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                </svg>
+                Meet the Director
+              </a>
+              <a href="intelligence_community_members.html" class="btn-secondary inline-flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+                Explore Community
+              </a>
+            </div>
+          </div>
+
+          <!-- Director's Portrait and Name (stacked, centered) -->
+          <div class="flex flex-col items-center justify-center space-y-4">
+            <img 
+              src="images/tulsi.jpg" 
+              alt="Tulsi Gabbard" 
+              style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #FFD700; box-shadow: 0 4px 24px rgba(0,0,0,0.2);"
+              onerror="this.src='https://via.placeholder.com/180.png?text=Image+Unavailable'; this.onerror=null;" 
+            />
+            <h3 class="text-2xl font-headline font-bold" style="color:#fff;">Tulsi Gabbard</h3>
+            <p style="color:#ffe066;font-size:1.1rem;">Director of National Intelligence</p>
+            <div class="flex items-center justify-center space-x-2 text-sm" style="color:#ffe066;">
+              <span>U.S. Army Veteran • Former Congresswoman</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Access Dashboard -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-headline font-bold text-primary mb-4">Intelligence Community Dashboard</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Real-time access to declassified briefings, community updates, and professional resources
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Security Briefings -->
+                <div class="card group hover:shadow-card-hover cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 2a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent">
+                            DECLASSIFIED
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Security Briefings</h3>
+                    <p class="text-text-secondary text-sm mb-4">Latest declassified intelligence reports and threat assessments</p>
+                    <div class="text-xs text-text-secondary">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                            Updated 2 hours ago
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Opportunities -->
+                <div class="card group hover:shadow-card-hover cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
+                            HIRING
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Career Opportunities</h3>
+                    <p class="text-text-secondary text-sm mb-4">Join America's intelligence community with veteran preference programs</p>
+                    <div class="text-xs text-text-secondary">
+                        <div class="flex items-center">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                            </svg>
+                            247 open positions
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inter-Agency Collaboration -->
+                <div class="card group hover:shadow-card-hover cursor-pointer">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary/10 text-secondary">
+                            ACTIVE
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Inter-Agency Hub</h3>
+                    <p class="text-text-secondary text-sm mb-4">Collaborative initiatives and joint operations coordination</p>
+                    <div class="text-xs text-text-secondary">
+                        <div class="flex items-center">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                            </svg>
+                            18 agencies connected
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Portal -->
+                <div class="card group hover:shadow-card-hover cursor-pointer" onclick="window.location.href='secure_professional_portal.html'">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                            SECURE
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Professional Portal</h3>
+                    <p class="text-text-secondary text-sm mb-4">Secure access for intelligence community professionals</p>
+                    <div class="text-xs text-text-secondary">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-warning rounded-full mr-2"></div>
+                            Multi-factor authentication required
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Intelligence Reports -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-headline font-bold text-primary mb-4">Recent Declassified Reports</h2>
+                    <p class="text-lg text-text-secondary">
+                        Latest intelligence assessments available to the public
+                    </p>
+                </div>
+                <a href="news_communications_center.html" class="btn-primary">
+                    View All Reports
+                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Report 1 -->
+                <article class="card group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
+                            DECLASSIFIED
+                        </span>
+                        <span class="text-sm text-text-secondary">Sep 8, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-smooth">
+                        Global Cyber Threat Assessment Q3 2025
+                    </h3>
+                    <p class="text-text-secondary mb-4">
+                        Comprehensive analysis of emerging cyber threats and their implications for national security infrastructure.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                            </svg>
+                            42 pages
+                        </div>
+                        <button class="text-accent hover:text-accent-800 font-medium text-sm">
+                            Download PDF
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Report 2 -->
+                <article class="card group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success/10 text-success">
+                            PUBLIC RELEASE
+                        </span>
+                        <span class="text-sm text-text-secondary">Sep 5, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-smooth">
+                        Annual Transparency Report 2024
+                    </h3>
+                    <p class="text-text-secondary mb-4">
+                        Overview of intelligence community transparency initiatives and public engagement efforts.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                            </svg>
+                            28 pages
+                        </div>
+                        <button class="text-accent hover:text-accent-800 font-medium text-sm">
+                            Download PDF
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Report 3 -->
+                <article class="card group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary">
+                            STRATEGIC BRIEF
+                        </span>
+                        <span class="text-sm text-text-secondary">Sep 1, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-smooth">
+                        Intelligence Community Modernization Initiative
+                    </h3>
+                    <p class="text-text-secondary mb-4">
+                        Strategic roadmap for technological advancement and operational efficiency improvements.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                            </svg>
+                            35 pages
+                        </div>
+                        <button class="text-accent hover:text-accent-800 font-medium text-sm">
+                            Download PDF
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Highlights (REPLACED: official seals from Wikimedia Commons) -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-headline font-bold text-primary mb-4">Intelligence Community Highlights</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Showcasing the diverse organizations and professionals that make up America's intelligence community
+                </p>
+            </div>
+
+            <!-- Grid of official seals (hotlinked from Wikimedia Commons). Each image has onerror fallback. -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <!-- ODNI (if blocked, fallback will show placeholder) -->
+                <div class="card text-center p-6">
+                    <img src="images/1odni.jpg"
+                         alt="Office of the Director of National Intelligence"
+                         class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=ODNI'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Office of the Director (ODNI)</h4>
+                </div>
+
+                <!-- CIA -->
+                <div class="card text-center p-6">
+                    <img src="images/2cia.jpg"
+                         alt="CIA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=CIA'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Central Intelligence Agency</h4>
+                </div>
+
+                <!-- NSA -->
+                <div class="card text-center p-6">
+                    <img src="images/3nsa.jpg"
+                         alt="NSA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=NSA'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">National Security Agency</h4>
+                </div>
+
+                <!-- DIA -->
+                <div class="card text-center p-6">
+                    <img src="images/4dia.jpg"
+                         alt="DIA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=DIA'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Defense Intelligence Agency</h4>
+                </div>
+
+                <!-- NGA -->
+                <div class="card text-center p-6">
+                    <img src="images/5NGIA.jpg"
+                         alt="NGA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=NGA'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">National Geospatial-Intelligence Agency</h4>
+                </div>
+
+                <!-- NRO -->
+                <div class="card text-center p-6">
+                    <img src="images/6NRO.jpg"
+                         alt="NRO" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=NRO'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">National Reconnaissance Office</h4>
+                </div>
+
+                <!-- FBI -->
+                <div class="card text-center p-6">
+                    <img src="images/7FBI.jpg"
+                         alt="FBI" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=FBI'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Federal Bureau of Investigation</h4>
+                </div>
+
+                <!-- DEA -->
+                <div class="card text-center p-6">
+                    <img src="images/8DEA.jpg"
+                         alt="DEA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=DEA'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Drug Enforcement Administration (ONSI)</h4>
+                </div>
+
+                <!-- DHS -->
+                <div class="card text-center p-6">
+                    <img src="images/DOH.jpg"
+                         alt="DHS" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=DHS'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Department of Homeland Security (I&A)</h4>
+                </div>
+
+                <!-- State / INR -->
+                <div class="card text-center p-6">
+                    <img src="images/SINR.jpg"
+                         alt="State - INR" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=State'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">State Dept. (INR)</h4>
+                </div>
+
+                <!-- Treasury -->
+                <div class="card text-center p-6">
+                    <img src="images/9DOT.jpg"
+                         alt="Treasury OIA" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Treasury'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Treasury (OIA)</h4>
+                </div>
+
+                <!-- DOE -->
+                <div class="card text-center p-6">
+                    <img src="images/10DOE.jpg"
+                         alt="DOE OICI" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=DOE'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Department of Energy (OICI)</h4>
+                </div>
+
+                <!-- Department of Defense (DoD) -->
+                <div class="card text-center p-6">
+                    <img src="images/11DOD.jpg"
+                         alt="DoD" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=DoD'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">Department of Defense</h4>
+                </div>
+
+                <!-- U.S. Army -->
+                <div class="card text-center p-6">
+                    <img src="images/12ARMY.jpg"
+                         alt="U.S. Army" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Army'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Army Intelligence</h4>
+                </div>
+
+                <!-- U.S. Navy -->
+                <div class="card text-center p-6">
+                    <img src="images/13NAVY.jpg"
+                         alt="U.S. Navy" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Navy'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Navy Intelligence</h4>
+                </div>
+
+                <!-- U.S. Air Force -->
+                <div class="card text-center p-6">
+                    <img src="images/14AF.jpg"
+                         alt="U.S. Air Force" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Air+Force'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Air Force Intelligence</h4>
+                </div>
+
+                <!-- U.S. Marine Corps -->
+                <div class="card text-center p-6">
+                    <img src="images/15MC.jpg"
+                         alt="U.S. Marine Corps" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Marines'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Marine Corps Intelligence</h4>
+                </div>
+
+                <!-- U.S. Coast Guard -->
+                <div class="card text-center p-6">
+                    <img src="images/16CG.jpg"
+                         alt="U.S. Coast Guard" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Coast+Guard'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Coast Guard Intelligence</h4>
+                </div>
+
+                <!-- U.S. Space Force -->
+                <div class="card text-center p-6">
+                    <img src="images/17SF.jpg"
+                         alt="U.S. Space Force" class="h-20 mx-auto mb-4 object-contain"
+                         onerror="this.src='https://via.placeholder.com/160x160.png?text=Space+Force'; this.onerror=null;">
+                    <h4 class="text-sm font-medium text-primary">U.S. Space Force Intelligence</h4>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="intelligence_community_members.html" class="btn-primary" style="padding: 14px 32px; font-size: 1.1rem;">
+                    View Community Members
+                    
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" style="color:#FFD700;">Office of the Director</h3>
+                    <p class="text-primary-200 text-sm">
+                        Leading America's intelligence community with transparency, innovation, and unwavering commitment to national security.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" style="color:#FFD700;">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="director_s_office_leadership_hub.html" class="text-primary-200 hover:text-white transition-smooth">Director's Office</a></li>
+                        <li><a href="intelligence_community_members.html" class="text-primary-200 hover:text-white transition-smooth">Community Members</a></li>
+                        <li><a href="news_communications_center.html" class="text-primary-200 hover:text-white transition-smooth">News & Communications</a></li>
+                        <li><a href="gallery_historical_archives.html" class="text-primary-200 hover:text-white transition-smooth">Gallery & Archives</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" style="color:#FFD700;">Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">Career Opportunities</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">FOIA Requests</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-smooth">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold" style="color:#FFD700;">Contact</h3>
+                    <div class="space-y-2 text-sm text-primary-200">
+                        <p>Office of the Director of National Intelligence</p>
+                        <p>Washington, DC 20511</p>
+                        <p>Public Affairs: (601) 994-5948</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 Office of the Director of National Intelligence. All Rights Reserved.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-primary-200 text-sm">Official U.S. Government Website</span>
+                    <div class="flex items-center space-x-1">
+                        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <span class="text-xs text-primary-200">Secure Connection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading states for interactive elements
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                if (this.style.cursor === 'pointer') {
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68c2cebb5a29fd19262a8b5e/1j4sff3u5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

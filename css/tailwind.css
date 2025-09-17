@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1B365D; /* Deep institutional navy */
+  --color-primary-50: #F0F4F8; /* Very light navy */
+  --color-primary-100: #D9E2EC; /* Light navy */
+  --color-primary-200: #BCCCDC; /* Medium light navy */
+  --color-primary-300: #9FB3C8; /* Medium navy */
+  --color-primary-400: #829AB1; /* Medium dark navy */
+  --color-primary-500: #627D98; /* Base navy */
+  --color-primary-600: #486581; /* Dark navy */
+  --color-primary-700: #334E68; /* Darker navy */
+  --color-primary-800: #243B53; /* Very dark navy */
+  --color-primary-900: #1B365D; /* Deep institutional navy */
+
+  /* Secondary Colors */
+  --color-secondary: #2E5984; /* Supporting navy */
+  --color-secondary-50: #F1F5F9; /* Very light supporting navy */
+  --color-secondary-100: #E2E8F0; /* Light supporting navy */
+  --color-secondary-200: #CBD5E0; /* Medium light supporting navy */
+  --color-secondary-300: #A0AEC0; /* Medium supporting navy */
+  --color-secondary-400: #718096; /* Medium dark supporting navy */
+  --color-secondary-500: #4A5568; /* Base supporting navy */
+  --color-secondary-600: #2E5984; /* Supporting navy */
+  --color-secondary-700: #2C5282; /* Dark supporting navy */
+  --color-secondary-800: #2A4365; /* Very dark supporting navy */
+  --color-secondary-900: #1A365D; /* Deepest supporting navy */
+
+  /* Accent Colors */
+  --color-accent: #C41E3A; /* Strategic red */
+  --color-accent-50: #FEF2F2; /* Very light red */
+  --color-accent-100: #FEE2E2; /* Light red */
+  --color-accent-200: #FECACA; /* Medium light red */
+  --color-accent-300: #FCA5A5; /* Medium red */
+  --color-accent-400: #F87171; /* Medium dark red */
+  --color-accent-500: #EF4444; /* Base red */
+  --color-accent-600: #DC2626; /* Dark red */
+  --color-accent-700: #C41E3A; /* Strategic red */
+  --color-accent-800: #991B1B; /* Very dark red */
+  --color-accent-900: #7F1D1D; /* Deepest red */
+
+  /* Background Colors */
+  --color-background: #FAFBFC; /* Clean canvas */
+  --color-surface: #F1F3F5; /* Subtle elevation */
+
+  /* Text Colors */
+  --color-text-primary: #1A1D23; /* Extended reading */
+  --color-text-secondary: #4A5568; /* Clear hierarchy */
+
+  /* Status Colors */
+  --color-success: #22543D; /* Mission accomplished */
+  --color-success-50: #F0FDF4; /* Very light green */
+  --color-success-100: #DCFCE7; /* Light green */
+  --color-success-200: #BBF7D0; /* Medium light green */
+  --color-success-300: #86EFAC; /* Medium green */
+  --color-success-400: #4ADE80; /* Medium dark green */
+  --color-success-500: #22C55E; /* Base green */
+  --color-success-600: #16A34A; /* Dark green */
+  --color-success-700: #15803D; /* Darker green */
+  --color-success-800: #22543D; /* Mission accomplished */
+  --color-success-900: #14532D; /* Deepest green */
+
+  --color-warning: #B7791F; /* Security alert */
+  --color-warning-50: #FFFBEB; /* Very light yellow */
+  --color-warning-100: #FEF3C7; /* Light yellow */
+  --color-warning-200: #FDE68A; /* Medium light yellow */
+  --color-warning-300: #FCD34D; /* Medium yellow */
+  --color-warning-400: #FBBF24; /* Medium dark yellow */
+  --color-warning-500: #F59E0B; /* Base yellow */
+  --color-warning-600: #D97706; /* Dark yellow */
+  --color-warning-700: #B7791F; /* Security alert */
+  --color-warning-800: #92400E; /* Very dark yellow */
+  --color-warning-900: #78350F; /* Deepest yellow */
+
+  --color-error: #C53030; /* Critical attention */
+  --color-error-50: #FEF2F2; /* Very light error red */
+  --color-error-100: #FEE2E2; /* Light error red */
+  --color-error-200: #FECACA; /* Medium light error red */
+  --color-error-300: #FCA5A5; /* Medium error red */
+  --color-error-400: #F87171; /* Medium dark error red */
+  --color-error-500: #EF4444; /* Base error red */
+  --color-error-600: #DC2626; /* Dark error red */
+  --color-error-700: #C53030; /* Critical attention */
+  --color-error-800: #991B1B; /* Very dark error red */
+  --color-error-900: #7F1D1D; /* Deepest error red */
+
+  /* Border Colors */
+  --color-border: #E2E8F0; /* Clean borders */
+  --color-border-accent: #C41E3A; /* Strategic borders */
+
+  /* Shadow Colors */
+  --shadow-primary: rgba(27, 54, 93, 0.08); /* Subtle elevation */
+  --shadow-medium: rgba(27, 54, 93, 0.12); /* Medium elevation */
+  --shadow-strong: rgba(27, 54, 93, 0.16); /* Strong elevation */
+}
+
+@layer base {
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .font-headline {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Source Serif Pro', serif;
+  }
+
+  .transition-smooth {
+    transition: all 300ms ease-out;
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 4px 12px var(--shadow-primary);
+  }
+
+  .shadow-medium {
+    box-shadow: 0 6px 16px var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: 0 8px 24px var(--shadow-strong);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-smooth hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-smooth hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white font-semibold py-3 px-6 rounded-lg transition-smooth hover:bg-accent-800 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-subtle border border-gray-200 p-6 transition-smooth hover:shadow-medium;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-smooth;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

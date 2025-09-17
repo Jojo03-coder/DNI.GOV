@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DNI Chat page</title>
+  <style>
+    :root{
+      --accent:#0b5cff;
+      --bg:#f8fafc;
+      --card-bg:#fff;
+      --muted:#6b7280;
+      --radius:14px;
+      --shadow:0 4px 20px rgba(0,0,0,0.1);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,'Segoe UI',Roboto;
+      background:var(--bg);
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+    }header{
+  background:var(--accent);
+  color:#fff;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+header .avatar{
+  width:40px;height:40px;border-radius:50%;background:#fff;color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-weight:600;
+}
+header h1{font-size:18px;margin:0;}
+
+main{
+  flex:1;
+  overflow-y:auto;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.msg{
+  max-width:70%;
+  padding:10px 14px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  font-size:14px;
+  line-height:1.4;
+}
+.from-agent{
+  align-self:flex-start;
+  background:var(--card-bg);
+}
+.from-user{
+  align-self:flex-end;
+  background:var(--accent);
+  color:#fff;
+}
+
+footer{
+  padding:12px;
+  background:#fff;
+  border-top:1px solid #e5e7eb;
+  display:flex;
+  gap:10px;
+}
+footer input{
+  flex:1;
+  padding:10px 12px;
+  border-radius:var(--radius);
+  border:1px solid #d1d5db;
+  font-size:14px;
+}
+footer button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius);
+  padding:10px 16px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="avatar">AG</div>
+    <h1>DNI Chat</h1>
+  </header>  <main id="chatBox">
+    <div class="msg from-agent">Hello, this is the DNI. How can I assist you today?</div>
+  </main>  <footer>
+    <input type="text" id="chatInput" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+  </footer>
+
+<script>
+  const input = document.getElementById('chatInput');
+  const btn = document.getElementById('sendBtn');
+  const box = document.getElementById('chatBox');
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Add user message to UI
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg from-user';
+    userMsg.textContent = text;
+    box.appendChild(userMsg);
+
+    input.value = '';
+    box.scrollTop = box.scrollHeight;
+
+    try {
+      // Send to your backend (server.js)
+      let response = await fetch("/send-sms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+
+      let result = await response.text();
+
+      // Add agent/Twilio reply to UI
+      const reply = document.createElement('div');
+      reply.className = 'msg from-agent';
+      reply.textContent = result;
+      box.appendChild(reply);
+      box.scrollTop = box.scrollHeight;
+
+    } catch (err) {
+      const errorMsg = document.createElement('div');
+      errorMsg.className = 'msg from-agent';
+      errorMsg.textContent = "Error sending message ❌";
+      box.appendChild(errorMsg);
+      box.scrollTop = box.scrollHeight;
+    }
+  }
+
+  btn.addEventListener('click', sendMessage);
+  input.addEventListener('keypress', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+</script>
+
+
+</body>
+</html>
